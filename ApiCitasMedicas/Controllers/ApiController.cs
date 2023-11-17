@@ -69,6 +69,14 @@ namespace ApiCitasMedicas.Controllers
             return mensaje;
         }
 
+        [HttpPost("PutCita")]
+        public string Put([FromBody] CitasProgramadas obj)
+        {
+            string msj = dao.ActualizarCitaProgramada(obj);
+
+            return msj;
+        }
+
 
         [HttpGet("GetMedicosNo")]
         public List<Medicos> GetMedicoNo()

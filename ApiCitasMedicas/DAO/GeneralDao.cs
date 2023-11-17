@@ -264,6 +264,28 @@ namespace ApiCitasMedicas.DAO
             }
             return msj;
         }
+
+        public string ActualizarCitaProgramada(CitasProgramadas obj) 
+        {
+            string msj = "";
+
+            try {
+                SqlHelper.ExecuteNonQuery(cadena_conexion, "SP_ACTUALIZAR_CITA",
+                       obj.codCita,
+                       obj.nomPac,
+                       obj.codMed,
+                       obj.codEsp,
+                       obj.codTurno,
+                       obj.fecha);
+                msj = $"Su cita ha sido reprogramada para el dia {obj.fecha}";
+            }
+            catch (Exception ex)
+            {
+                msj = ex.Message;
+            }
+            return msj;
+        }
+
     }
 }
 
