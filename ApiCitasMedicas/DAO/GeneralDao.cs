@@ -104,8 +104,8 @@ namespace ApiCitasMedicas.DAO
                 lista.Add(new CitasProgramadas()
                 {            
                     codCita = dr.GetInt32(0),
-                    codMed = dr.GetString(1),
-                    nomPac = dr.GetString(2),
+                    nomPac = dr.GetString(1),
+                    codMed = dr.GetString(2),
                     codEsp = dr.GetString(3),
                     codTurno = dr.GetString(4),
                     fecha = dr.GetDateTime(5),
