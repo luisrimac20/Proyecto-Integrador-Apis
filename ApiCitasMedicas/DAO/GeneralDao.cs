@@ -253,8 +253,9 @@ namespace ApiCitasMedicas.DAO
                     usuario.nombre,
                     usuario.apellido,
                     usuario.clave,
-                    usuario.confimar_clave,
-                msj = $"Ha completado el registro de usuario, estimado {usuario.nombre}");
+                    usuario.confimar_clave
+                    );
+                    msj = $"Ha completado el registro de usuario, estimado {usuario.nombre}";
             }
             catch (Exception ex)
             {
