@@ -252,6 +252,7 @@ namespace ApiCitasMedicas.DAO
                 SqlHelper.ExecuteNonQuery(cadena_conexion, "INSERTAR_USUARIO",
                     usuario.nombre,
                     usuario.apellido,
+                    usuario.correo,
                     usuario.clave,
                     usuario.confimar_clave
                     );
