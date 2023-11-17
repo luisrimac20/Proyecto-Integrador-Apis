@@ -54,7 +54,7 @@ namespace ApiCitasMedicas.Controllers
 
         // GET api/<ApiController>/5
         [HttpGet("GetCitas/{id}")]
-        public CitasProgramadas GetIdCitas(string id)
+        public CitasProgramadas GetIdCitas(int id)
         {
             CitasProgramadas? obj = dao.ListarCitas()
                 .Find(m => m.codCita.Equals(id));
