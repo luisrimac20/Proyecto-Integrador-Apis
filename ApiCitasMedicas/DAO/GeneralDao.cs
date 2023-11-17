@@ -92,24 +92,23 @@ namespace ApiCitasMedicas.DAO
             return lista;
         }
 
-        public List<Citas> ListarCitas()
+        public List<CitasProgramadas> ListarCitas()
         {
-            var lista = new List<Citas>();
+            var lista = new List<CitasProgramadas>();
 
             SqlDataReader dr =
                 SqlHelper.ExecuteReader(cadena_conexion, "SP_LISTAR_CITAS_PROGRAMADAS");
 
             while (dr.Read())
             {
-                lista.Add(new Citas()
+                lista.Add(new CitasProgramadas()
                 {            
-                    codMed = dr.GetString(0),
-                    nomPac = dr.GetString(1),
-                    codEsp = dr.GetString(2),
-                    codTurno = dr.GetString(3),
-                    fecha = dr.GetString(4),
-
-
+                    codCita = dr.GetInt32(0),
+                    codMed = dr.GetString(1),
+                    nomPac = dr.GetString(2),
+                    codEsp = dr.GetString(3),
+                    codTurno = dr.GetString(4),
+                    fecha = dr.GetDateTime(5),
                 });
             }
             dr.Close();

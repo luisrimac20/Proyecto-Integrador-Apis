@@ -47,16 +47,16 @@ namespace ApiCitasMedicas.Controllers
 
 
         [HttpGet("GetCitas")]
-        public List<Citas> GetCitasProgramadas()
+        public List<CitasProgramadas> GetCitasProgramadas()
         {
             return dao.ListarCitas();
         }
 
         // GET api/<ApiController>/5
         [HttpGet("GetCitas/{id}")]
-        public Citas GetIdCitas(string id)
+        public CitasProgramadas GetIdCitas(string id)
         {
-            Citas? obj = dao.ListarCitas()
+            CitasProgramadas? obj = dao.ListarCitas()
                 .Find(m => m.codCita.Equals(id));
             return obj;
         }
